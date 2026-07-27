@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add hidden picking_ids field on invoice form so attrs can reference it -->
+    <record id="account_move_form_stock_picking" model="ir.ui.view">
+        <field name="name">account.move.form.stock.picking</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <field name="picking_ids" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
